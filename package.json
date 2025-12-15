@@ -1,0 +1,51 @@
+{
+  "name": "react-generic-select",
+  "version": "0.1.0",
+  "description": "All-in-one, type-safe select components built on top of shadcn/ui",
+  "keywords": [
+    "react",
+    "select",
+    "shadcn",
+    "dropdown",
+    "async",
+    "typescript",
+    "ui"
+  ],
+  "author": "Lemi Melkamu",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemidb/react-generic-select.git"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18", 
+    "lucide-react": ">=0.300.0",
+  "class-variance-authority": ">=0.7.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "react": ">18.3.0",
+    "react-dom": ">18.3.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "lucide-react": "^0.561.0"
+  }
+}

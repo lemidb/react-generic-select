@@ -1,0 +1,9 @@
+src/
+components/
+examples/
+.github/
+
+tsconfig.json
+tsup.config.ts
+
+*.log
