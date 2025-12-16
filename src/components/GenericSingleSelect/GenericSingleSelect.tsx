@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react"
 import { Check, ChevronsUpDown, Loader2 } from "lucide-react"
 
-import { cn } from "@/lib/utils"
-import { useDebounce } from "@/hooks/use-debounce"
-import { Button } from "@/components/ui/button"
+import { cn } from "../../utils/cn"
+import { useDebounce } from "../../utils/index"
+import { Button } from "../ui/button"
 import {
   Command,
   CommandEmpty,
@@ -11,13 +11,13 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command"
+} from "../ui/command"
 
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "../ui/popover"
 
 export interface GenericSingleSelectProps<T extends Record<string, any>> {
   options: T[]
@@ -125,6 +125,20 @@ export function GenericSingleSelect<T extends Record<string, any>>({
 
   const selectedOption = options.find((option) => option[valueKey] === value)
 
+  // When onSearchChange is not provided, fall back to local client-side filtering
+  const filteredOptions =
+    onSearchChange || !debouncedSearch.trim()
+      ? options
+      : options.filter((option) => {
+          const label = String(option[labelKey] ?? "")
+          const optionValue = String(option[valueKey] ?? "")
+          const term = debouncedSearch.toLowerCase().trim()
+          return (
+            label.toLowerCase().includes(term) ||
+            optionValue.toLowerCase().includes(term)
+          )
+        })
+
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
@@ -159,11 +173,11 @@ export function GenericSingleSelect<T extends Record<string, any>>({
               displayClassName
             )}
           >
-            {options.length === 0 ? (
+            {filteredOptions.length === 0 ? (
               <CommandEmpty>No results found</CommandEmpty>
             ) : (
               <CommandGroup>
-                {options.map((option) => {
+                {filteredOptions.map((option) => {
                   const isSelected = option[valueKey] === value
                   return (
                     <CommandItem
@@ -199,7 +213,7 @@ export function GenericSingleSelect<T extends Record<string, any>>({
               <div className="text-muted-foreground p-2 text-center text-xs">
                 Scroll to load more
               </div>
-            ) : options.length > 0 ? (
+            ) : filteredOptions.length > 0 ? (
               <div className="text-muted-foreground p-2 text-center text-xs">
                 No more results
               </div>

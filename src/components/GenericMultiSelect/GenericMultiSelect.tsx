@@ -10,10 +10,10 @@ import {
   XIcon,
 } from "lucide-react"
 
-import { cn } from "@/lib/utils"
-import { useDebounce } from "@/hooks/use-debounce"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { cn } from "../../utils/cn"
+import { useDebounce } from "../../utils/index"
+import { Badge } from "../ui/badge"
+import { Button } from "../ui/button"
 import {
   Command,
   CommandGroup,
@@ -21,15 +21,15 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@/components/ui/command"
+} from "../ui/command"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
-import { Separator } from "@/components/ui/separator"
+} from "../ui/popover"
+import { Separator } from "../ui/separator"
 
-import { Input } from "@/components/ui/input"
+import { Input } from "../ui/input"
 
 const multiSelectVariants = cva(
   "m-1 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110",
@@ -103,6 +103,7 @@ export const GenericMultiSelect = React.forwardRef(
   ) => {
     const [selectedOptions, setSelectedOptions] = useState<T[]>(defaultValue)
 
+    
     const [isPopoverOpen, setIsPopoverOpen] = useState(false)
     const [isAnimating, setIsAnimating] = useState(false)
     const scrollRef = useRef<HTMLDivElement>(null)
