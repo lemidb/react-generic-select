@@ -1,6 +1,7 @@
 # react-generic-select
 
 [![npm version](https://img.shields.io/npm/v/react-generic-select)](https://www.npmjs.com/package/react-generic-select)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 All-in-one, type-safe select components built on top of **shadcn/ui**.
 
@@ -40,6 +41,35 @@ However, real-world apps often need:
 
 This library embraces Shadcn’s philosophy while providing
 a reusable, production-ready select abstraction.
+
+#### Configure Path Aliases 
+For Next.js
+Add to your tsconfig.json or jsconfig.json:
+```typescript
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	}
+}
+```
+For Vite
+Add to your vite.config.ts:
+
+```typescript
+import { defineConfig } from "vite";
+import path from "path";
+
+export default defineConfig({
+	resolve: {
+		alias: {
+			"@": path.resolve(__dirname, "./src"),
+		},
+	},
+});
+```
 
 
 ## Installation

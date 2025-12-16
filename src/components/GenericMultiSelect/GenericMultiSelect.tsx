@@ -12,8 +12,8 @@ import {
 
 import { cn } from "../../utils/cn"
 import { useDebounce } from "../../utils/index"
-import { Badge } from "../ui/badge"
-import { Button } from "../ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import {
   Command,
   CommandGroup,
@@ -21,15 +21,15 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "../ui/command"
+} from "@/components/ui/command"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../ui/popover"
-import { Separator } from "../ui/separator"
+} from "@/components/ui/popover"
+import { Separator } from "@/components/ui/separator"
 
-import { Input } from "../ui/input"
+import { Input } from "@/components/ui/input"
 
 const multiSelectVariants = cva(
   "m-1 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110",

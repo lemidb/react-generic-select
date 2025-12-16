@@ -3,7 +3,7 @@ import { Check, ChevronsUpDown, Loader2 } from "lucide-react"
 
 import { cn } from "../../utils/cn"
 import { useDebounce } from "../../utils/index"
-import { Button } from "../ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Command,
   CommandEmpty,
@@ -11,13 +11,13 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "../ui/command"
+} from "@/components/ui/command"
 
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../ui/popover"
+} from "@/components/ui/popover"
 
 export interface GenericSingleSelectProps<T extends Record<string, any>> {
   options: T[]
@@ -38,7 +38,7 @@ export interface GenericSingleSelectProps<T extends Record<string, any>> {
 
 export function GenericSingleSelect<T extends Record<string, any>>({
   options,
-  valueKey,
+  valueKey,   
   labelKey,
   value,
   defaultValue,
