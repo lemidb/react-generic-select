@@ -17,7 +17,10 @@ out of the box. This library aims to fill that gap.
 - Highly customizable and extensible
 
 ## Check out the demo 
-[Demo link](https://react-generic-select-demo-3zmt.vercel.app/) 
+- [Demo app](https://react-generic-select-demo-3zmt.vercel.app/)
+- [Demo Video](https://www.awesomescreenshot.com/video/47564037?key=52d519983eb5ab07783d7cebd96d63e2)
+#### NPM package 
+[react-generic-select](https://www.npmjs.com/package/react-generic-select)
 
 ## Requirements
 
