@@ -16,6 +16,9 @@ out of the box. This library aims to fill that gap.
 - Built using shadcn/ui primitives
 - Highly customizable and extensible
 
+## Check out the demo 
+[Demo link](https://react-generic-select-demo-3zmt.vercel.app/) 
+
 ## Requirements
 
 This component is designed to work with **shadcn/ui**.
