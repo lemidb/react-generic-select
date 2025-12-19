@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Check, ChevronsUpDown, Loader2 } from "lucide-react"
 
-import { cn } from "../../utils/cn"
+import { cn } from "@/lib/utils"
 import { useDebounce } from "../../utils/index"
 import { Button } from "@/components/ui/button"
 import {

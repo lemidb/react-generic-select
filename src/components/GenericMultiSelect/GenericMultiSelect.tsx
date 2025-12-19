@@ -10,7 +10,7 @@ import {
   XIcon,
 } from "lucide-react"
 
-import { cn } from "../../utils/cn"
+import { cn } from "@/lib/utils"
 import { useDebounce } from "../../utils/index"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"

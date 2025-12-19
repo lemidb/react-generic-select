@@ -35,6 +35,19 @@ You must have the following components installed:
 - badge
 - separator
 
+You must also have tailwind cn utility function for the styles to work. 
+
+import { cn } from "@/lib/utils"; 
+
+```typescript 
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+```
+
 This library does **not** bundle shadcn components by design.
 
 Shadcn UI intentionally avoids complex, opinionated components.
